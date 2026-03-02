@@ -2,10 +2,13 @@ package com.example.app_listgridspinner;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -72,5 +75,28 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+            getMenuInflater().inflate(R.menu.menu_test , menu);
+            return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item){
+        int id = item.getItemId();
+        if(id == R.id.a1){
+           Intent i = new Intent(MainActivity.this ,  ContactActivity.class) ;
+           startActivity(i);
+        }
+        else if(id == R.id.a2){
+           Intent i = new Intent(MainActivity.this , AboutActivity.class) ;
+           startActivity(i);
+        }
+        else if(id == R.id.quit){
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

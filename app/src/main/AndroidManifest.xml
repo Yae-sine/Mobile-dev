@@ -12,13 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App_ListGridSpinner">
         <activity
-            android:name=".menu"
+            android:name=".AboutActivity"
             android:exported="false" />
         <activity
-            android:name=".about"
-            android:exported="false" />
-        <activity
-            android:name=".contact"
+            android:name=".ContactActivity"
             android:exported="false" />
         <activity
             android:name=".SpinnerActivity"
